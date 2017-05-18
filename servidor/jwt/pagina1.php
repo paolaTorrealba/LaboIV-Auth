@@ -8,7 +8,7 @@ $tk = explode(' ', $headers['Authorization']);
 try {
   $decoded = JWT::decode($tk[1], $key, array('HS256'));
 
-} catch (Exception $e) {
+} catch (\Firebase\JWT\ExpiredException $e) {
 
 }
 if ($decoded){
