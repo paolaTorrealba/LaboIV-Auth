@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WsService } from '../../services/ws/ws.service';
 
 @Component({
   selector: 'app-pagina1',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Pagina1Component implements OnInit {
 
-  constructor() { }
+  constructor(private ws: WsService)
+  {
+    this.ws.getJwt('http://localhost:8080/servidor/jwt/', {})
+    .then(data => {
+      console.log(data);
+    })
+    .catch(e => {
+      console.log(e);
+    });
+  }
 
   ngOnInit() {
   }

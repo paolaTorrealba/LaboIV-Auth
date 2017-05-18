@@ -21,7 +21,7 @@ export class User {
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
 
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   // public password:AbstractControl;
   // public submitted:boolean = false;
   user: User = new User('','');
-  url: string = 'http://localhost:80/jwt';
+  url: string = 'http://localhost:8080/servidor/jwt/';
 
   constructor( private router: Router, private ws: WsService) {
     this.user.email = '';

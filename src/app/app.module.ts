@@ -15,6 +15,7 @@ import { AutService } from './services/auth/aut.service';
 import { VerificarJWTService } from './services/verificar-jwt/verificar-jwt.service';
 import { JwtModule } from './jwt/jwt.module';
 
+
 const appRoutes: Routes = [
   {
     path: 'pagina1',
@@ -41,13 +42,14 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    JwtModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
     WsService,
-    JwtModule,
     AutService,
-    VerificarJWTService
+    VerificarJWTService,
+    
   ],
   bootstrap: [AppComponent]
 })
