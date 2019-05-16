@@ -10,7 +10,7 @@ import { AuthHttp } from 'angular2-jwt';
 @Injectable()
 export class WsService {
 
-  url: string = 'http://localhost:8080/servidor/jwt/';
+  url: string = 'http://127.0.0.1/LaboIV-Auth/servidor/jwt/';
 
   constructor(public http: Http, private authHttp: AuthHttp)
   {
@@ -19,7 +19,7 @@ export class WsService {
 
   /**
    * Metodo HTTP nativo
-   * @param user 
+   * @param user
    */
   get(user: Object)
   {
@@ -32,7 +32,7 @@ export class WsService {
   /**
    * Wrapper de HTTP que envia el token en la cabecera.
    * Para hacer peticines autenticado.
-   * @param user 
+   * @param user
    */
   getJwt(url, user: Object)
   {
@@ -43,8 +43,8 @@ export class WsService {
   }
 
   private extractData(res: Response) {
-    let body = res.json();    
-    
+    let body = res.json();
+
     return body || { };
   }
 
